@@ -1,43 +1,42 @@
-export function parse(file: File): PromisesAPlus.Thenable<Tag>;
-export function parse(buffer: Uint32Array): PromisesAPlus.Thenable<Tag>;
-export function parse(buffer: Buffer): PromisesAPlus.Thenable<Tag>;
+export function parse(file: File | Uint32Array | Buffer): PromisesAPlus.Thenable<Tag>;
 
 export interface Tag {
     title: string,
     artist: string,
     album: string,
     year: string,
-    image: Id3Image,
+    image: Image,
     lyrics: string,
     comment: string,
     track: number,
     genre: string
+    version: VersionInfo
 }
 
-export interface Id3Image {
+export interface Image {
     type: string,
     mime: string,
     imageType: string,
-    descriptions?: string
+    descriptions: string
 }
 
-export interface Id3Flags {
+export interface Flags {
     unsync: number,
     xheader: number,
     experimental: number
 }
 
-export interface Id3VersionInfo {
-    v1: Id3Version,
-    v2: Id3Version2
+export interface VersionInfo {
+    v1: v1,
+    v2: v2
 }
 
-export interface Id3Version {
+export interface v1 {
     major: number,
     minor: number
 }
 
-export interface Id3Version2 extends Id3Version {
+export interface v2 extends v1 {
     revision: number,
-    flags: Id3Flags
+    flags: Flags
 }
