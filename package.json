@@ -1,8 +1,8 @@
 {
-  "name": "types-id3-parser",
+  "name": "@types/id3-parser",
   "version": "0.1.0",
   "description": "Type definition for creepreyang's id3-parser",
-  "types": "index.d.ts",
+  "types": "index.d.ts", 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dvdcxn/types-id3-parser.git"
@@ -12,9 +12,5 @@
   "bugs": {
     "url": "https://github.com/dvdcxn/types-id3-parser/issues"
   },
-  "homepage": "https://github.com/dvdcxn/types-id3-parser#readme",
-  "dependencies": {
-    "@types/node": "^7.0.5",
-    "@types/promises-a-plus": "0.0.27"
-  }
+  "homepage": "https://github.com/dvdcxn/types-id3-parser#readme"
 }
